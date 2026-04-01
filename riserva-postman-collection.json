@@ -1,0 +1,187 @@
+{
+  "info": {
+    "_postman_id": "riserva-collection-001",
+    "name": "Riserva API",
+    "description": "Collection per il progetto Spring Boot - Riserva Naturale",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Specie",
+      "item": [
+        {
+          "name": "Get All Specie",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/specie",
+              "host": ["{{baseUrl}}"],
+              "path": ["specie"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create Specie",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nomeComune\": \"Leone\",\n  \"nomeScientifico\": \"Panthera leo\",\n  \"descrizione\": \"Grande felino della savana africana\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/specie/create",
+              "host": ["{{baseUrl}}"],
+              "path": ["specie", "create"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Edit Specie",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nomeComune\": \"Leone Aggiornato\",\n  \"nomeScientifico\": \"Panthera leo\",\n  \"descrizione\": \"Descrizione aggiornata\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/specie/edit/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["specie", "edit", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Specie",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/specie/delete/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["specie", "delete", "1"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Animali",
+      "item": [
+        {
+          "name": "Get All Animali",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/animali",
+              "host": ["{{baseUrl}}"],
+              "path": ["animali"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create Animale",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Simba\",\n  \"eta\": 5,\n  \"peso\": 180.5,\n  \"specie\": {\n    \"id\": 1\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/animali/create",
+              "host": ["{{baseUrl}}"],
+              "path": ["animali", "create"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Edit Animale",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Simba Aggiornato\",\n  \"eta\": 6,\n  \"peso\": 190.0,\n  \"specie\": {\n    \"id\": 1\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/animali/edit/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["animali", "edit", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Animale",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/animali/delete/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["animali", "delete", "1"]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
